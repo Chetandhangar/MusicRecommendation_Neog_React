@@ -1,10 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .App{
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.App-header{
+  text-align: center;
 }
 
 .list-non-bullet{
   list-style: none;
+}
+.App-para{
+  font-size: large;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+}
+
+.content{
+  padding-top: 1,5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.content-header{
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+
+.list{
+  padding-top: 0.5rem;
+  width: 80%;
+  height: 20%;
+  border: 1px solid cadetblue ;
+  border-radius: 15px;
+}
+.list-item{
+ 
+  padding: 0.5rem;
+}
+.item-name{
+  font-weight: bold;
+  padding-left: 0.5rem;
+}
+
+.music-list{
+  cursor: pointer;
+  display: inline;
+  padding: 0.5rem 1rem;
+  border: 1px solid cadetblue;
+  border-radius: 0.5rem;
+  margin: 1rem 0.3rem;
+}
+
+.item-song{
+  width: 5rem;
+  height: 5rem;
 }

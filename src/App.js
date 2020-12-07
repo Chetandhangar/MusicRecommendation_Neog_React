@@ -1,51 +1,8 @@
 import React,{useState} from 'react';
 import './App.css';
+import musicTrivia from './shared/musicTrivia'
 
-const musicTrivia ={
-  "Happy" : [
-    {
-      "songName" : "Tik Tik Vajtey Dokyat",
-      "rating" : '4.5/5',
-    
-    },
-    {
-      "songName" : "Gulabachi Kali",
-      "rating" : "3.5/5"
-    }
-  ],
-  
-  "Sad" : [
-    {
-      "songName" : "Deval Kalji re",
-      "rating" : "5/5",
-    },
-    { 
-      "songName" : "Vat Disu De re Deva",
-      "rating" : "5/5"
-    }
-  ],
-  "Dance" : [
-    {
-      "songName" : "Awaj vadhav Dj",
-      "rating" : "4.5/5"
-    },
-    {
-      "songName" : "Zinghat",
-      "rating" : "3.5/5"
-    }
-  ],
-  "Romantic" : [
-    {
-      "songName" : "Nako Nako Na Re",
-      "rating" : "3/5"
-    },
-    {
-      "songName" : "Khari",
-      "rating" : "5/5"
-    }
-  ]
 
-}
 
 var musicList = Object.keys(musicTrivia);
 
@@ -62,26 +19,32 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h1>FeelTheRealMusic</h1>
+    <div className="App ">
+      <h1 className="App-header">FeelTheRealMusic</h1>
+      <p className="App-para"><strong>Music Changes the Way We Perceive The World.</strong>
+         Choose  the best Song according to your mood. We provide you some of the best songs from the world.
+      </p>
 
       <div className="content">
         {musicList.map(music=>{
-          return <span style={{padding:"2rem", cursor:"pointer"}}
+          return <div className="music-list"
           onClick={()=>clickHandler(music)}
-          >{music}</span>
+          >{music}</div>
         })}
-        <hr></hr>
+        
 
-        <h1>Song Names</h1>
+        <h1 className="content-header">Songs</h1>
         <hr></hr>
-        <div>
+        <div className="song-list">
           {musicTrivia[song].map((song)=>{
             return(
-              <ul key={song.songName}>
-                <li className="list-non-bullet">
-                  <div>{song.songName}</div>
-                  <div>{song.rating}</div>
+              <ul className="list"
+               key={song.songName}>
+                <li className=" list-non-bullet">
+                  <img className="item-song" src={song.image} alt={song.songName}/>
+                  <div className="list-item">Song Name : <span className="item-name">{song.songName}</span> </div>
+                  <div className="list-item">Rating : <span className="item-name">{song.rating}</span></div>
+                  <div className="list-item">Movie Name :<span className="item-name">{song.movieName}</span></div>
                 </li>
               </ul>
             );
